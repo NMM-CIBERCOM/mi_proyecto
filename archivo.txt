@@ -1,3 +1,19 @@
 nueva linea al archivo
 nueva linea al archivo
 cambio en la nueva rama
+
+<?php
+// Verificar si existe un contador de visitas en un archivo
+$archivo = 'contador.txt';
+if (file_exists($archivo)) {
+    // Leer y aumentar el contador
+    $contador = (int)file_get_contents($archivo);
+    $contador++;
+} else {
+    $contador = 1;
+}
+// Guardar el nuevo valor del contador
+file_put_contents($archivo, $contador);
+
+echo "Esta página ha sido visitada $contador veces.";
+?>
